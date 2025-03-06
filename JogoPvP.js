@@ -1,11 +1,9 @@
 let width ;
 let height;
 
-let di = '2025-01-01';
-let df = '2025-12-31';
-
 let score1 = 0;
 let score2 = 0;
+let scoreText;
 
 class JogoPvP extends Phaser.Scene {
 
@@ -173,22 +171,27 @@ class JogoPvP extends Phaser.Scene {
         //q 5 0
         this.quad50 = this.add.sprite(0.855 * width, 0.43 * height, 'quadrado');
         this.quad50.setScale(1);
+        this.quad50.setInteractive({useHandCursor: true});
 
         //q 5 1
         this.quad51 = this.add.sprite(0.855 * width, 0.53 * height, 'quadrado');
         this.quad51.setScale(1);
+        this.quad51.setInteractive({useHandCursor: true});
 
         //q 5 2
         this.quad52 = this.add.sprite(0.855 * width, 0.63 * height, 'quadrado');
         this.quad52.setScale(1);
+        this.quad52.setInteractive({useHandCursor: true});
 
         //q 5 3
         this.quad53 = this.add.sprite(0.855 * width, 0.73 * height, 'quadrado');
         this.quad53.setScale(1);
+        this.quad53.setInteractive({useHandCursor: true});
 
         //q 5 4
         this.quad54 = this.add.sprite(0.855 * width, 0.83 * height, 'quadrado');
         this.quad54.setScale(1);
+        this.quad54.setInteractive({useHandCursor: true});
 
         //Lapis
         this.lapis = this.add.sprite(0.305 * width, 0.68 * height, 'lapis');
