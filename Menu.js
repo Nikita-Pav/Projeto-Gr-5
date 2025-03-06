@@ -33,8 +33,8 @@ class Menu extends Phaser.Scene {
         this.background.setScale(1.5);
         
         //Titulo
-        this.titulo = this.add.sprite(0.6 * width, 0.16 * height,'titulo');
-        this.titulo.setScale(1.6);
+        this.titulo = this.add.sprite(0.61 * width, 0.16 * height,'titulo');
+        this.titulo.setScale(1.7);
 
         //Creditos
         this.btCreditos = this.add.sprite(0.94 * width, 0.90 * height, 'btCreditos');
@@ -42,38 +42,38 @@ class Menu extends Phaser.Scene {
         this.btCreditos.setInteractive({ useHandCursor: true });
 
         //Instrucoes
-        this.btInstrucoes = this.add.sprite(0.94 * width, 0.73 * height, 'btInstrucoes');
+        this.btInstrucoes = this.add.sprite(0.94 * width, 0.74 * height, 'btInstrucoes');
         this.btInstrucoes.setScale(1.2);
         this.btInstrucoes.setInteractive({ useHandCursor: true });
 
         //Top
-        this.btTop = this.add.sprite(0.94 * width, 0.56 * height, 'btTop');
+        this.btTop = this.add.sprite(0.94 * width, 0.58 * height, 'btTop');
         this.btTop.setScale(1.2);
         this.btTop.setInteractive({useHandCursor: true});
 
         //PVP
-        this.btPVP = this.add.sprite(0.6 * width, 0.35 * height, 'btPVP');
-        this.btPVP.setScale(1);
+        this.btPVP = this.add.sprite(0.57 * width, 0.365 * height, 'btPVP');
+        this.btPVP.setScale(1.05);
         this.btPVP.setInteractive({useHandCursor: true});
 
         //Level1
-        this.btLvl1 = this.add.sprite(0.6 * width, 0.53 * height, 'btLvl1');
-        this.btLvl1.setScale(1);
+        this.btLvl1 = this.add.sprite(0.57 * width, 0.54 * height, 'btLvl1');
+        this.btLvl1.setScale(1.05);
         this.btLvl1.setInteractive({useHandCursor: true});
 
         //Level2
-        this.btLvl2 = this.add.sprite(0.6 * width, 0.71 * height, 'btLvl2');
-        this.btLvl2.setScale(1);
+        this.btLvl2 = this.add.sprite(0.57 * width, 0.715 * height, 'btLvl2');
+        this.btLvl2.setScale(1.05);
         this.btLvl2.setInteractive({useHandCursor: true});
         
         //level3
-        this.btLvl3 = this.add.sprite(0.6 * width, 0.89 * height, 'btLvl3');
-        this.btLvl3.setScale(1);
+        this.btLvl3 = this.add.sprite(0.57 * width, 0.89 * height, 'btLvl3');
+        this.btLvl3.setScale(1.05);
         this.btLvl3.setInteractive({useHandCursor: true});
 
         //Lapis
-        this.lapis = this.add.sprite(0.47 * width, 0.66 * height, 'lapis');
-        this.lapis.setScale(1.3);
+        this.lapis = this.add.sprite(0.43 * width, 0.66 * height, 'lapis');
+        this.lapis.setScale(1.4);
 
         //BT Logic
         //BT Highlight
