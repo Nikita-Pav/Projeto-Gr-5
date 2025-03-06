@@ -1,9 +1,6 @@
 let width ;
 let height;
 
-let di = '2025-01-01';
-let df = '2025-12-31';
-
 class Menu extends Phaser.Scene {
 
     constructor() {
