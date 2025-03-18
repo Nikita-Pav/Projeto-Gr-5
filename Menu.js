@@ -1,5 +1,6 @@
 let width ;
 let height;
+let callOnce = 0;
 
 class Menu extends Phaser.Scene {
 
@@ -18,6 +19,10 @@ class Menu extends Phaser.Scene {
         this.load.image('btLvl2', 'assets/bt-level2.png');
         this.load.image('btLvl3', 'assets/bt-level3.png');
         this.load.image('lapis', 'assets/lapis.png');
+
+        this.load.image('creditos', 'assets/creditos-img.png');
+        this.load.image('instrucoes', 'assets/instrucoes-img.png');
+        this.load.image('btFechar', 'assets/bt-fechar.png');
     }
 
     create() {
@@ -33,17 +38,17 @@ class Menu extends Phaser.Scene {
         this.titulo = this.add.sprite(0.61 * width, 0.16 * height,'titulo');
         this.titulo.setScale(1.7);
 
-        //Creditos
+        //Creditos-bt
         this.btCreditos = this.add.sprite(0.94 * width, 0.90 * height, 'btCreditos');
         this.btCreditos.setScale(1.2);
         this.btCreditos.setInteractive({ useHandCursor: true });
 
-        //Instrucoes
+        //Instrucoes-bt
         this.btInstrucoes = this.add.sprite(0.94 * width, 0.74 * height, 'btInstrucoes');
         this.btInstrucoes.setScale(1.2);
         this.btInstrucoes.setInteractive({ useHandCursor: true });
 
-        //Top
+        //Top-bt
         this.btTop = this.add.sprite(0.94 * width, 0.58 * height, 'btTop');
         this.btTop.setScale(1.2);
         this.btTop.setInteractive({useHandCursor: true});
@@ -72,6 +77,21 @@ class Menu extends Phaser.Scene {
         this.lapis = this.add.sprite(0.435 * width, 0.66 * height, 'lapis');
         this.lapis.setScale(1.35);
 
+        //Creditos-img
+        this.cerditos = this.add.sprite(0.5*width, 0.5*height, 'creditos');
+        this.cerditos.setScale(1.5);
+        this.cerditos.
+
+        //Instrucoes-img
+        this.instrucoes = this.add.sprite(0.5*width, 0.5*height, 'instrucoes');
+        this.instrucoes.setScale(1.5);
+
+        //bt-fechar
+        this.btFechar = this.add.sprite(0.94*width, 0.1*height, 'btFechar');
+        this.btFechar.setScale(1.1);
+        this.btFechar.setInteractive({useHandCursor: true});
+        
+
         //BT Logic
         //BT Highlight
         this.input.on('gameobjectover',function(pointer, gameObject) {
@@ -82,6 +102,33 @@ class Menu extends Phaser.Scene {
             gameObject.displayHeight -= 5;
             gameObject.displayWidth -= 5;
         },this);
+        this.input.on('gameobjectdown', function(pointer, gameObject) {
+            switch(gameObject) {
+                case this.btPVP:
+                    this.scene.transition({ target: 'JogoPvP', duration: 100 });
+                    break;
+                case this.btLvl1:
+                    this.scene.transition({ target: 'JogoPvE', duration: 100, data: {level: 1} });
+                    break;
+                case this.btLvl2:
+                    this.scene.transition({ target: 'JogoPvE', duration: 100, data: {level: 2} });
+                    break;
+                case this.btLvl3:
+                    this.scene.transition({ target: 'JogoPvE', duration: 100, data: {level: 3} });
+                    break;
+                case this.btCreditos:
+                    break;
+                case this.btInstrucoes:
+                    break;
+                default:
+                    break;
+            }    
+            
+        },this);
     }
 
+    update() {
+        width = game.config.width;
+        height = game.config.height;
+    }
 }
