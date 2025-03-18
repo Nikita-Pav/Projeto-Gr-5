@@ -153,7 +153,6 @@ class Menu extends Phaser.Scene {
                 default:
                     break;
             }    
-            
         },this);
     }
 

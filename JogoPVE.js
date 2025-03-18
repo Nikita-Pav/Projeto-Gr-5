@@ -225,7 +225,15 @@ class JogoPvE extends Phaser.Scene {
             gameObject.displayHeight -= 5;
             gameObject.displayWidth -= 5;
         }, this);
-        
+        this.input.on('gameobjectdown', function(pointer, gameObject) {
+            switch (gameObject){
+                case this.btHome:
+                    this.scene.start('Menu');
+                    break;
+                default:
+                    break;
+            }
+        }, this);
     }
 
     //update(){}
