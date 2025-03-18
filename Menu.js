@@ -118,8 +118,37 @@ class Menu extends Phaser.Scene {
                     this.scene.transition({ target: 'JogoPvE', duration: 100, data: {level: 3} });
                     break;
                 case this.btCreditos:
+                    this.cerditos.visible = true;
+                    this.instrucoes.visible = false;
+                    this.btFechar.visible = true;
+                    this.titulo.visible = false;
+                    this.btPVP.visible = false;
+                    this.btLvl1.visible = false;
+                    this.btLvl2.visible = false;
+                    this.btLvl3.visible = false;
+                    this.lapis.visible = false;
                     break;
                 case this.btInstrucoes:
+                    this.cerditos.visible = false;
+                    this.instrucoes.visible = true;
+                    this.btFechar.visible = true;
+                    this.titulo.visible = false;
+                    this.btPVP.visible = false;
+                    this.btLvl1.visible = false;
+                    this.btLvl2.visible = false;
+                    this.btLvl3.visible = false;
+                    this.lapis.visible = false;
+                    break;
+                case this.btFechar:
+                    this.cerditos.visible = false;
+                    this.instrucoes.visible = false;
+                    this.btFechar.visible = false;
+                    this.titulo.visible = true;
+                    this.btPVP.visible = true;
+                    this.btLvl1.visible = true;
+                    this.btLvl2.visible = true;
+                    this.btLvl3.visible = true;
+                    this.lapis.visible = true;
                     break;
                 default:
                     break;

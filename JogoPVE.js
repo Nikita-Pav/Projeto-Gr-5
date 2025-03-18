@@ -8,7 +8,7 @@ let scoreText;
 let time = 10.0;
 let timeText;
 
-let level = 0;
+let level;
 
 class JogoPvE extends Phaser.Scene {
 
@@ -23,7 +23,9 @@ class JogoPvE extends Phaser.Scene {
     preload() {
         this.load.image('background','assets/background.png');
         this.load.image('titulo','assets/titulo.png');
-        this.load.image('btPVE', 'assets/bt-level1.png');
+        this.load.image('btPVE1', 'assets/bt-level1.png');
+        this.load.image('btPVE2', 'assets/bt-level2.png');
+        this.load.image('btPVE3', 'assets/bt-level3.png');
         this.load.image('ampTempo', 'assets/ampulhetaTempo.png');
         this.load.image('home', 'assets/bt_home.png');
         this.load.image('quadrado', 'assets/quadrado-recebenumeros.png');
@@ -49,9 +51,8 @@ class JogoPvE extends Phaser.Scene {
         this.btHome.setInteractive({useHandCursor: true});
 
         //PVE
-        this.btPVE = this.add.sprite(0.135 * width, 0.18 * height, 'btPVE');
+        this.btPVE = this.add.sprite(0.135 * width, 0.18 * height, 'btPVE1');
         this.btPVE.setScale(1);
-        //this.btPVP.setInteractive({useHandCursor: true});
 
         //Ampulheta
         this.ampTempo = this.add.sprite(0.135 * width, 0.4 * height, 'ampTempo');
