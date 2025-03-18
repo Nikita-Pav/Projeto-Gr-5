@@ -8,10 +8,16 @@ let scoreText;
 let time = 10.0;
 let timeText;
 
+let level = 0;
+
 class JogoPvE extends Phaser.Scene {
 
     constructor() {
         super('JogoPvE');
+    }
+
+    init(data){
+        level = data.level;
     }
 
     preload() {
@@ -205,19 +211,21 @@ class JogoPvE extends Phaser.Scene {
         this.lapis = this.add.sprite(0.305 * width, 0.68 * height, 'lapis');
         this.lapis.setScale(1.2);
 
+        scoreText = this.add.text(180, 290, score1+'-'+score2, { fontSize: '100px', fill: '#0A4' });
+        timeText = this.add.text(230, 450, time+'s', { fontSize: '75px', fill: '#FFF'});
+
         //BT Logic
         //BT Highlight
         this.input.on('gameobjectover',function(pointer, gameObject) {
             gameObject.displayHeight += 5;
             gameObject.displayWidth += 5;
-        },this);
+        }, this);
         this.input.on('gameobjectout',function(pointer, gameObject) {
             gameObject.displayHeight -= 5;
             gameObject.displayWidth -= 5;
-        },this);
-
-        scoreText = this.add.text(180, 290, score1+'-'+score2, { fontSize: '100px', fill: '#0A4' });
-        timeText = this.add.text(230, 450, time+'s', { fontSize: '75px', fill: '#FFF'});
+        }, this);
+        
     }
 
+    //update(){}
 }

@@ -26,7 +26,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://www.hypatiamat.com/images/favicon.ico">
 </head>
 <body>
-    <div id = 'divId'>
+    <div>
         <script>
         var PleaseRotateOptions = {
             onlyMobile: true,
@@ -36,32 +36,36 @@
             allowClickBypass: true
         }
         </script>
-        <script src="phaser.min.js"></script> 
+        <script src="phaser.min.js"></script>
         <script src="Menu.js"></script>
-        <script>
-            var config = {
-                type: Phaser.CANVAS,
-                width: window.innerWidth * window.devicePixelRatio,
-                height: window.innerHeight * window.devicePixelRatio,
-                scale: {
-                    mode: Phaser.Scale.FIT,
-                    autoCenter: Phaser.Scale.CENTER_BOTH,
-                    width: 2048,
-                    height: 1200,
-                },
-                render: {
-                    pixelArt: false
-                },
-                dom: {
-                    createContainer: true
-                },
-                backgroundColor: "#ffffff",
-                parent: 'divId',
-                fullscreenTarget: 'divId',
-                scene: [Menu],
-            }
-            var game = new Phaser.Game(config);
-        </script>
     </div>
 </body>
 </html>
+<script>
+    var config = {
+        type: Phaser.CANVAS,
+        width: window.innerWidth * window.devicePixelRatio,
+        height: window.innerHeight * window.devicePixelRatio,
+        scale: {
+            mode: Phaser.Scale.FIT,
+            autoCenter: Phaser.Scale.CENTER_BOTH,
+            width: 2048,
+            height: 1200,
+        },
+        render: {
+            pixelArt: false
+        },
+        dom: {
+            createContainer: true
+        },
+        backgroundColor: "#ffffff",
+        scene: [Menu],
+    }
+
+    var game = new Phaser.Game(config);
+    game.scene.start('Menu');
+
+    var stop = false; 
+    var flag = false; 
+    var please = "";
+</script>
