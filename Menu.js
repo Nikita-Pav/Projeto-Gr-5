@@ -30,7 +30,7 @@ class Menu extends Phaser.Scene {
         this.background.setScale(1.5);
         
         //Titulo
-        this.titulo = this.add.sprite(0.61 * width, 0.16 * height,'titulo');
+        this.titulo = this.add.sprite(0.50 * width, 0.16 * height,'titulo');
         this.titulo.setScale(1.7);
 
         //Creditos
