@@ -35,7 +35,7 @@ class Menu extends Phaser.Scene {
         this.background.setScale(1.5);
         
         //Titulo
-        this.titulo = this.add.sprite(0.50 * width, 0.16 * height,'titulo');
+        this.titulo = this.add.sprite(0.6 * width, 0.16 * height,'titulo');
         this.titulo.setScale(1.7);
 
         //Creditos-bt
@@ -80,17 +80,18 @@ class Menu extends Phaser.Scene {
         //Creditos-img
         this.cerditos = this.add.sprite(0.5*width, 0.5*height, 'creditos');
         this.cerditos.setScale(1.5);
-        this.cerditos.
+        this.cerditos.visible = false;
 
         //Instrucoes-img
         this.instrucoes = this.add.sprite(0.5*width, 0.5*height, 'instrucoes');
         this.instrucoes.setScale(1.5);
+        this.instrucoes.visible = false;
 
         //bt-fechar
         this.btFechar = this.add.sprite(0.94*width, 0.1*height, 'btFechar');
         this.btFechar.setScale(1.1);
         this.btFechar.setInteractive({useHandCursor: true});
-        
+        this.btFechar.visible = false;        
 
         //BT Logic
         //BT Highlight
