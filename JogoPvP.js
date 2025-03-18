@@ -197,6 +197,8 @@ class JogoPvP extends Phaser.Scene {
         this.lapis = this.add.sprite(0.305 * width, 0.68 * height, 'lapis');
         this.lapis.setScale(1.2);
 
+        scoreText = this.add.text(180, 290, score1+'-'+score2, { fontSize: '100px', fill: '#049' });
+
         //BT Logic
         //BT Highlight
         this.input.on('gameobjectover',function(pointer, gameObject) {
@@ -207,8 +209,8 @@ class JogoPvP extends Phaser.Scene {
             gameObject.displayHeight -= 5;
             gameObject.displayWidth -= 5;
         },this);
-
-        scoreText = this.add.text(180, 290, score1+'-'+score2, { fontSize: '100px', fill: '#049' });
+        
     }
 
+    //update(){}
 }
