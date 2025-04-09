@@ -20,24 +20,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0
                 ,minimum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi">
-    <meta name="HandheldFriendly" content="true" />
     <title>Jogo da Velha</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="https://www.hypatiamat.com/images/favicon.ico">
 </head>
 <body>
-    <div>
-        <script>
-        var PleaseRotateOptions = {
-            onlyMobile: true,
-            forcePortrait: false,
-            message: "Por Favor Rode o Ecrã",
-            subMessage: "(ou clique para continuar)",
-            allowClickBypass: true
-        }
-        </script>
+    <div id = 'divId'>
         <script src="phaser.min.js"></script>
         <script src="Menu.js"></script>
+        
     </div>
 </body>
 </html>
@@ -59,13 +50,9 @@
             createContainer: true
         },
         backgroundColor: "#ffffff",
-        scene: [Menu],
-    }
+        scene: [Menu,JogoPvP,JogoPvE]
+    };
 
     var game = new Phaser.Game(config);
     game.scene.start('Menu');
-
-    var stop = false; 
-    var flag = false; 
-    var please = "";
 </script>
