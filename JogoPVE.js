@@ -1,16 +1,17 @@
-let width ;
-let height;
+var width;
+var height;
 
-let score1 = 0;
-let score2 = 0;
-let scoreText;
+var score1 = 0;
+var score2 = 0;
+var scoreText;
 
-let time = 10.0;
-let timeText;
+var time = 10.0;
+var timeText;
 
-let level;
+var level;
 
-class JogoPvE extends Phaser.Scene {
+// Make JogoPvE globally accessible
+window.JogoPvE = class JogoPvE extends Phaser.Scene {
     constructor() {
         super('JogoPvE');
     }
@@ -146,6 +147,10 @@ class JogoPvE extends Phaser.Scene {
         this.input.on('gameobjectdown', function(pointer, gameObject) {
             switch (gameObject) {
                 case this.btHome:
+                    console.log("Home button clicked");
+                    if (this.temporizador) {
+                        this.temporizador.remove();
+                    }
                     this.scene.start('Menu');
                     break;
                 default:
@@ -163,7 +168,6 @@ class JogoPvE extends Phaser.Scene {
                 if (this.tempoRestante <= 0) {
                     this.temporizador.remove();
                     this.contadorAtivo = false;
-                    // Aqui pode adicionar uma ação ao terminar o tempo
                     console.log('Tempo esgotado!');
                 }
             },
@@ -181,4 +185,4 @@ class JogoPvE extends Phaser.Scene {
     }
 
     //update(){}
-}
+};
